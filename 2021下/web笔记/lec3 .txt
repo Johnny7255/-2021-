@@ -1,0 +1,89 @@
+1.  HTML ENTITY
+		
+		HTML中<>会被认为是标记的符号，这种字符不能被直接用键盘打出，
+	需要用字母ENITYT
+		
+		ENTITY写法
+		&ENTITY的名字
+		&#ENTITY的序号
+		
+		EG：&Lt &60 这两个都表示小于的字符
+		空格:&nbsp
+		
+		Combining Diacritical Marks（拼音符号）
+		用法是，在字符后写其entity
+		eg: a&#768 html打印是a的一声
+		
+2.  HTML 字符集
+	 选择字符集
+	 <meta charset="UTF-8">
+	 
+3.  URL
+	URL(Uniform Resource Locators(统一资源定位器)):用于指向一个网站的地址
+	其可以用网址或者id地址单位页面
+	
+	URL格式(不用IP的)
+	scheme://prefix.domain:port/path/filename
+		解释：
+			 scheme:互联网服务的名字
+			 prefix:域前缀
+			 domain:域名
+			 port:主位置机的端口号
+			 path:服务器的路径
+			 filename:html文档名字
+			 
+	URL在网络上传输只能使用ascii形式的网址，对于非ascii的。要用%与十六进制进行转义
+	
+4.	HTML表格<form>
+	<form></form>是html的收集用户输入的
+	
+		<input>元素
+			type属性：
+			
+			<text>:输入文本框
+			eg:<input type="text" name=firstname>
+			
+			<radio>:复选框
+			eg:<input type="radio" name="text" value="a">
+				<input type="radio" name="text" value="a" checked>
+				(如果有写checked,那会被一开始选择)
+				
+			<submit>:提交按钮
+			eg:<input type="submit" value="submit">
+			将内容提交并且触发事件？
+			
+			Action 属性：
+			执行提交后的脚本，通常交给服务器干
+			eg. <form action="action_page.php">
+			
+5.	HTML input属性
+		value属性：输入表的初始值
+		readonly属性：不允许修改
+		disabled属性：无法使用
+		size属性：输入栏的大小
+		
+6.	maxlength属性
+		输入的最大长度	
+		
+7.	autocomplete属性
+	有了这个，可以根据用户之前的输入，自动补全表格中的内容
+	需要在form中声明
+	eg. <form autocomplete="on">
+	
+8.  novalidate属性
+	开启之后，所有的检验都只会在输出后执行
+	
+9.	autofocus属性
+	开启之后，会被自动聚焦
+
+10.	formaction属性
+	其值指向一个脚本，
+			
+			
+
+		
+	
+		
+	
+		
+		

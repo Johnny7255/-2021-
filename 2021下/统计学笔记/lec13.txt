@@ -1,0 +1,5 @@
+Trail:测试
+Outcome:结果，测试的结果
+Event:事件，某种情况发生的集合
+Sample Space:样本空间，所有测试结果的集合
+Law Of Large Number:当测试足够多次时候，某种情况发生的频率会趋近与其发生的真实概率

@@ -1,0 +1,118 @@
+﻿HTML介绍
+
+1.什么是HTML
+HTML是全称为超文本标记语言（Hyper Text Markup Language）
+
+2.HTML基础结构介绍：
+
+DOCTYPE 说明了该超文本的具体语言 eg <!DOCTYPE HTML>
+<head>与</head>标注着一个具体文本的内容之外的信息,用于帮助浏览器正确展示信息
+<title>与</title>标注着具体文本部分的标题（直观来看是标签名字）
+<body>与</body>之间标注着文本的具体内容，是网页中可视的
+
+	eg
+	<!DOCTYPE HTML>
+	<html>
+		<head>
+		<title>title name</title>
+		</body>
+			<h>head</h>
+			<p>context</p>
+		</body>
+	</html>
+
+5.HTML标签
+html的标签是html中的关键词，标签一般成对出现，<tag> </tag>这种形式，前者是tag内容的开始，后者表示结束
+	
+4.HTML基础元素:
+
+标题：<h1></h1> ：表示heading（英语标题的意思），h开头，后面数字表示序号，比如h1表示第一个标题，h2第二个，最多6个
+段落：<p> context </p> ：表示一段具体内容，内容为context部分
+链接：<a>在html中表示链接，通常用于定义超链接href是a最主要的内容
+	eg.<a href="../具体超链接地址.html">超链接名字</a>
+图片：html的图片用的是<img>标签，src指的是源文件（source file），alt指的是备用文档（alternative text）
+	eg.<img src="smile.jpg" alt="smile" width="42" height="42">
+	
+5.HTML元素：
+通常以<tagname>content</tagname>形式出现，这一套就一套元素
+	嵌套的HTML元素:<tagname>content</tagname>形式
+	空的HTML元素：<br>指的是换行，不需要</br>，可以用<br />用来关闭空元素
+				  p.s.通常空元素不需要被关闭，但是它可以用于增强可读性，然后XML要使用的话需要它
+				  
+6.HTML属性
+属性用于添加给html元素，给元素提供格外的信息，属性总是在起始标签那里声明
+
+	lang属性：特别声明元素内容的语言，对于搜索引擎与可访问性的应用程序很重要
+	title属性：其声明了元素的额外信息
+	href属性：具体声明超链接的地址
+	alt属性：当某个特定html元素用不了的时候，用它代替
+
+7.heading
+  heading只能有6个，h1是最主要的，重点程度1-6依次递减
+	
+8.水平线：hr元素，hr元素用于在其中的内容下面画水平线
+	eg：<hr> <p>asdfghjkl</p></hr>
+		asdfghjkl下面会有下划线
+
+9.head
+  head和heading没有半毛钱关系，head包含着文本的meta data
+  head在html tag和body tag之间
+  meta是数据的数据，html meta data是html文本的数据
+ 
+10.meta内容
+ 
+  title:是一个meta data定义html文本名	
+  meta:它还是meta data，通常用于定义字符集，有时候定义关于文本的别的内容
+
+11.paragraph
+    段落用于分割html文档结构，浏览器会自动在html那里补充空格
+    段落中过多的空格比如<p> a            c</p>浏览器最终会视为一个空格，此处显示为 a c
+    段落元素之间没有<br>的话，不会自动换行
+
+12.preformatted预编排
+     <pre></pre>形式，确保了行距与单词之间的间隔
+ 
+  <pre>	
+  	a
+	b
+	c  
+</pre>
+	
+页面abc会不同行，这一点与p不同
+
+13.HTML style属性
+    语法style="property:value;"
+    property是css的某些属性
+    value是具体定义值
+
+    property:
+    background-color
+    font-szie
+    font-family
+    text-align
+    
+14.HTML formatting（格式）
+     <b>context</b>其中内容粗体
+     <i>context</i>其中内容斜体
+     <strong>context</strong>其中内容强调
+     <em>context</em>也是强调
+     <small>context</small>缩小
+     <mark>context</mark>标注
+     <del>context</del>删除线
+     <ins>context</ins>下划线
+     <sub>context<sub>下标
+     <sup>context<sup>上标
+
+15.HTML引用
+    短引用：<q>context</q>context被加双引号
+    长引用：<blockquote>context</blockquote>长引用，这段context会被单独拿出来展示 
+    缩写：<abbr>context</abbr> abbr元素表示缩写
+    作者标注：<address>context</address>
+    作品引用：<cite>context</cite>
+
+16.HTML CODE元素
+    代码：<code>context</code>用于展示代码，放在<pre></pre>元素中挺方便的
+    变量：<var>context</var>
+
+17.HTML注释
+    长这样<!--注释菌-->

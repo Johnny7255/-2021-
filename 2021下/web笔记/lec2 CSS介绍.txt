@@ -1,0 +1,219 @@
+﻿1.HTML 颜色
+  颜色16进制表达；#** ** ** **
+  第一对表示r
+  第二对表示g
+  第三对表示b
+  第四对表示alpha（透明）
+  
+  eg：color=#8888
+  
+ 2.CSS通用简单介绍
+   CSS全称  Cascading Style Sheets（层叠样式表）
+   用于描述html文档在浏览器上的具体表现
+   
+   使用CSS的操作
+   单行：使用style属性
+   文档内部：使用<style>元素
+   文档外部：使用css文件
+   
+   单行用法：通常用于特立独行的元素
+			 EG:<h1 style="font-size:5px">
+	
+   文档内部：用于定义单页的文档样式（ps在head中定义）
+			 EG:<style>
+					p{background-color:green}
+				</style>
+	
+	文档外部：用于定义多页的文档样式
+			  操作EG：
+				CSS文件：test.css
+				内容如下：
+				p{background-color:red}
+
+			    HTML文文件操作：
+				<head>
+					<link rel="stylesheet" href="test.css">
+				<head>
+	
+	CSS字体：
+			字体大小：font-szie
+			字体颜色：color
+			字体：font-family
+	
+	嵌套式css: css样式的具体代码可以在{}之间定义，支持多种属性定义
+	
+	border: 显示html的边框是否可见，以及是什么样子
+	padding: 简写属性在一个声明中设置所有内边距属性。该属性可以有 1 到 4 个值。
+	margin:  简写属性在一个声明中设置所有外边距属性。该属性可以有 1 到 4 个值。
+			 值的顺序都为上右下左
+	
+	id属性：id属性用于特定的标识某个元素的css样式 比如: 
+		eg:	定义:
+			#p01 (写在style中)
+			{
+				color:blue;
+			}
+			
+			使用：
+			<p id="p01"> this is me</p>
+			
+	类属性：类属性定义了一类css样式
+		eg: 定义：
+			p.error
+			{
+				color:blue;
+			}
+			
+			使用：
+			<p class="error"> sdsds </p>
+		
+		id与class的区别：
+		id要求只能在一个页面中使用一次，因为其涉及js操作与后端的操作
+		
+3.HTML链接：
+		语法：<a>关键字用于标识一个超链接
+			  href是a的属性指明超链接的目标位置。
+			  eg: <a href="url">超链接处文本</a>
+			  
+		target属性：用于标志是从如何到达指定超链接
+			_self:默认，它使得目标文档载入并显示在相同的框架或者窗口中作为源文档。
+			_blank:在新标签页打开
+			_parent:属性作用使得文档载入父窗口或者包含来超链接引用的框架的框架集。如果这个引用是在窗口或者在顶级框架中，那么它与目标 _self 等效。
+			_top:新开个浏览器窗口打开
+		
+		超链接操作样式变化选择器：
+		link：选择器设置指向未被访问页面的链接的样式
+		visited：当已经点击过该超链接时候触发
+		hover：选择鼠标指针浮动在其上的元素
+		active：用于可使用的链接
+		
+		在 CSS 定义中，定义顺序为 link visited hover active 满足这个顺序定义才能正确触发
+		
+		URL 统一资源管理器(href的值)
+		html中 绝对URL定以网络的地址包含（html://www.）
+			   相对URL不包含上面的，用于标识本地的
+		
+		<a></a>之间的<img元素可以是超链接的东西。
+		href中，mailto可以用于打开用户的电子邮箱
+		超链接的标题(titlie)：当鼠标移动到该超链接入口上时，会显示相关说明
+		
+		使用按钮作为超链接入口，需要js事件：
+		eg：<button onClick="document.location='target.asp'">按钮字符</button>
+		
+4.HTML图片：
+	eg: <img src="url" alt="some text"></img>
+		url是img的目标图片，alt是找不到图片的时候的替代文本 
+		
+		ps：声明img图片的时候，有必要声明图片的大小，否则浏览器显示不稳定
+		大小可以直接用height: width: 声明，但是推荐用style
+		
+		src：定位图片的文件位置,可以指向别处的图片，包括互联网上的，需要绝对url
+		
+		float：img在页面中相对的位置，使图片浮动
+		
+		map：使用<map>标记来定义图像映射。图像映射是带有可点击区域的图像。
+			 <area>属性标记映射的区域
+			    area中shape标记映射区域的形状
+				coords标记映射区域的位置，不同shape的coords的作用不同
+				
+5.HTML表单：
+	表单都需要在<table></table>关键字之间声明
+	<tr> 用于将表单分为不同的行
+	<td> 用于将表单一行分为不同的区域
+	border属性：可以用于定义整个表单，或者某个表单格子的边框样式
+	border-collapse属性：没有具体的这个的定义，表单之间不同的格子之间是互相分离的。
+	<th>是表单不同列的列名
+	
+	text-algin属性：为该单元格中文本的位置
+	border-spacing属性：单元格之间的间距
+	colspan属性：拓展单个单元格的所占有的列数
+	rowspan属性：拓展单个抱一个的所占有的行数
+	
+6.HTML列表：
+	用于列举一列不同的元素
+	
+	unorder 没有序号
+	list-style-type属性可以定义物品前面的列表表示
+	eg：
+	<ul>
+		<li> abs </li>
+		<li> sbd </li>
+	</ul>
+	
+	
+	
+	ordered 有序号
+	type属性表示列表序号的显示方式
+	eg:
+	<ol>
+		<li>abs</li>
+		<li>bbb</li>
+	</ol>
+	
+	Description Lists：描述列表
+		<dl></dl>之间的内容是描述列表的内容
+		<dt></dt>是该表中具体的物品
+		<dd></dd>是对表中某物品的描述
+		
+	列表可以是嵌套式的，即在某个表中再插入某个表
+	列表也可以是水平的，需要将display属性定义为：inline
+	
+7.HTML块
+	块级元素：
+		<div>,<h1>到<h6>,<p>,<form>等
+	行级元素：
+		<span>,<a>,<img>等
+		
+	<div>：用于包含一系列某些举起的html元素，是容器，可以用来控制其中这些部分内容的css样式
+	<span>：用于在某个关键字之间中将某个特定的内容标识
+
+8.HTML类
+  作用1：
+  用类属性规定不同的种可复用的CSS属性，不冲突的class都会起作用
+  eg:
+	<style>
+		.class1
+		{
+			padding:10px;
+		}
+		.class2
+		{
+			color:red;
+		}
+	</style>
+	<p class="class1"> class</p>
+	<p class="class1 class2"> class1</p>
+	
+	作用2：
+	在js中找class，然后操作
+	
+9.HTML布局
+	浏览器通常是以复数列数进行排版的，通常是通过<div>元素进行布局
+	html视图中包含多种自带元素，这些元素有自身的布局的相对位置
+	在CSS中可以用id依次定义
+	
+10.HTML Iframe
+	iframe元素会创建包含另外一个文档的内联框架（即行内框架）。
+	eg <iframe src="url"></iframe>
+	
+	iframe作为超链接
+	eg:
+	<iframe src="url" name="iframe_a"></iframe>
+	
+	<a href="url"></a>
+	
+11.HTML JavaScript
+   <script></script>标记，元素要么包含脚本语句，要么通过SRC属性指向外部脚本文件。
+   通常用于管理图片，验证表格，动态的内容变化
+   
+   <noscript>用于在无法加载script时候用于显示提示
+	
+	用于改变某些元素的内容
+	eg:
+	document.getElementByID("ID").innerHTML="abs";
+
+
+			   
+		
+		
+				
