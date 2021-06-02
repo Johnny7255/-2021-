@@ -1,0 +1,73 @@
+1.通用寄存器(General Purpose Register)
+	
+	8086CPU有八个通用寄存器，Al是累加器，每个寄存器长度为8bits，但是有些指令可以用
+一对寄存器，一共16bits
+
+	寄存器对被赋予名字 AX BX CX DX
+	（寄存器是处理器中便于获取的内存）
+	
+2.标志寄存器(The Flag Register)
+	
+	8086通过16个特殊的标志寄存器来获取运算计算的结果。
+	
+	包含如下部分：
+	U:未定义寄存器
+	OF:溢出（overflow）标志寄存器
+	DF:String Direction Register
+	IF:Interrupt enable flag
+	SF:Sign flag MSB of result(显示得出结果最高位)
+	ZF:zero flag(当结果为0的时候放置)
+	AF:BCD Carray flag(BCD进位标记)
+	PF:Parity flag(奇偶标志)
+	CF:Carry flag(进位标志)
+	
+	其中,CF,PF,ZF,SF,OF也是条件标志与控制标志
+	
+3.指令指针(Instruction Pointer (IP))
+	
+	IP指针包含来自CS寄存器的偏移量，指向会被获取的下一个码，码长度限制为1mb。
+	总线接口单元(BIU Bus Interface Unit)将CS与IP结合以从内存中获取正确的字节。
+	
+	CS:IP用于从内存中定位正确的码，通常谢伟CS:IP
+	
+	定位算法EG：
+		CS 348A0(最后一位0是电路的，实际上只看前四个)
+		IP 4214
+		
+		CS:IP=348A:4218 or 39AB4 (16进制，CS*16+IP)
+
+4.段寄存器(Segment Register)
+	
+	8086有个20位的定位总线，内部寄存器有16bits
+	处理器一次只能从处理器获得64K的内容
+	段寄存器储存20位地址的前16位
+	64K的内存页被16个字节分散
+	
+	包括:
+			CS:  Code Segment Register (代码段寄存器)
+			SS:	 Stack Segment Register
+			ES:	 Extra Segment Register
+			DS:  Data Segment Register
+			
+	64K的段，可以定位1Mb中的任意区间，每个段的基础位中最后四位为0
+	
+		SI (source index), (DI) destination index(BP)和 base pointer 寄存器，
+	也是通用寄存器，用于临时当段寄存器。
+	
+6.栈段寄存器
+	
+		栈是内存的一段，用于在程序运行期间储存地址或者数据。SS和栈指针(SP)一起
+	定位，形式类似于CS:IP，注意，栈指针指向的是栈顶。算法和CS:IP一样。注意，SP
+	是有初始值的，每次放一个新的东西进去，值加一。
+	
+7.编程语言
+		
+		机器语言:一堆用于描述指令的二进制码
+		汇编语言:有助于程序员理解的，用了点助记英语记二进制代码的代码
+		高级语言:还需要说吗
+	
+	它，运行很快，内存要的少，但是问题懂的都懂
+	
+8.语法
+		操作符 操作数
+		mov     ax，568
