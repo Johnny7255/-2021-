@@ -1,0 +1,137 @@
+1.先来段自由的汇编源码
+
+	此处演示从0打印到8
+	
+		.MODEL medium
+		.STACK
+		.DATA
+		.CODE
+		.STARTUP
+	
+		mov dl,'0'
+		
+again:	mov ah,02h;这两行代码共同打印dl上的字符
+		int 021h;
+		
+		inc dl; dl上的值+1
+		
+		cmp dl,'9';这两行代码会让dl上的值与'9'相减,不会改变dl的值
+		jnz again;相减的结果会改变标志寄存器状态，这里不置0跳转
+		
+		.EXIT
+END
+
+	此处演示打印四行0123
+	
+			.STARTUP
+			mov bl,4;bl用于循环技术
+
+nextline:	mov dl
+
+nextchar:	mov ab,02h
+			int 021h
+			
+			inc dl
+			
+			cmp dl,'4'
+			jnz nextchar
+			
+			push dx;将dx值放入栈
+			
+			mov ah,02h
+			mov dl,10;换行
+			int 021h
+			mov dl,13;回车(光标返回当前行开头)
+			int 021h
+			pop dx;将dx上的值存回去
+			
+			dec bl
+			jnz nextline
+			.EXIT
+END
+
+2.寻址模式
+	定义:处理器用于获取内存的不同方式
+	
+	(1)立即寻址
+		
+		将操作数直接放到某个特定的寄存器
+		
+		语法：mov ax,56;将568直接存入ax
+			  mov ax,bx;将bx的值存入ax
+			  
+	(2)直接寻址
+		
+		直接地址在指令中完全指定内存中包含操作数的位置。
+		通过将指令中指定的偏移值与相关段寄存器组合而形成20位地址。
+		
+		语法：
+				mov ax,Count
+					通过DS:Count来算地址，从而获得操作数
+					
+				mov ax,ES:Count
+					通过ES:Count算地址
+					
+	(3)间接寻址
+	
+		间接寻址是一种类似于从数组中获得值的寻址方式。
+		
+		语法；
+				mov ax,[bx]
+				mov [ax],bx
+				
+				其中[ax][bx]这种东西会利用括号中寄存器的值定位到特定数据段。
+				具体定位方式为 DS:ax这种
+				
+				mov ax,[bx][SI]
+				偏移计算方式为 bx+SI
+				
+				mov ax,Count[bx][SI]
+				偏移计算方式为BX+SI+Count
+
+4.	寻址代码示例:
+				
+				.DATA
+						
+		A		WOED 	1234
+		B		WORD 	4321
+				
+				mov ax,6789;直接寻址，ax为6789
+				mov bx,OFFSET A;偏移值为A
+				mov dx,[bx];间接寻址 dx=1234
+				mov dx,B;直接寻址,dx为4321
+				mov dx,ax;直接寻址,dx=6789
+				
+5.8076指令表
+	
+	Byte1				Byte2
+				
+	opcode 	D   W 		Mod	     Reg  	R/M
+	6bits				2bits	 3bits	3bits
+
+	opcode: 这的是使用的具体操作指令	
+	D: 是表示方向，0表示数据来自寄存器，1表示数据到寄存器
+	Reg: 用于表示用哪个寄存器
+	W: 1表示移动一个单词,比如AX(AL和AH) 0表示移动一个字节,比如BL 
+	Mod: 用于说明寻址方式，以及相应偏移信息
+	R/M: 用于说明寻址方式以及相应寄存器
+	
+	实例看课件
+	
+6.汇编指令
+	
+	SEGMENT  表示代码段的开头
+	ENDS	 表示代码段的结尾
+	EQU	     将一个代数名赋值为一个常数
+	DB		 定义一个字节
+	DW		 定义一个16bit的单词
+	DD		 定义两个单词
+	
+	实例内容看课件
+	
+7.键盘输入指令
+	
+	mov ah,8;
+	int 021h; al读取键盘的值
+	mov dl,al;将al值存入dl
+		

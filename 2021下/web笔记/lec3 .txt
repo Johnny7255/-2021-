@@ -34,11 +34,11 @@
 			 
 	URL在网络上传输只能使用ascii形式的网址，对于非ascii的。要用%与十六进制进行转义
 	
-4.	HTML表格<form>
+4.	HTML表单<form>
 	<form></form>是html的收集用户输入的
 	
 		<input>元素
-			type属性：
+			type属性：type属性很多
 			
 			<text>:输入文本框
 			eg:<input type="text" name=firstname>
@@ -55,29 +55,67 @@
 			Action 属性：
 			执行提交后的脚本，通常交给服务器干
 			eg. <form action="action_page.php">
-			
-5.	HTML input属性
+		
+
+5.表单的属性	
+		input属性
 		value属性：输入表的初始值
 		readonly属性：不允许修改
 		disabled属性：无法使用
 		size属性：输入栏的大小
 		
-6.	maxlength属性
+	maxlength属性
 		输入的最大长度	
 		
-7.	autocomplete属性
+	autocomplete属性
 	有了这个，可以根据用户之前的输入，自动补全表格中的内容
 	需要在form中声明
 	eg. <form autocomplete="on">
 	
-8.  novalidate属性
+	novalidate属性
 	开启之后，所有的检验都只会在输出后执行
 	
-9.	autofocus属性
+	autofocus属性
 	开启之后，会被自动聚焦
 
-10.	formaction属性
-	其值指向一个脚本，
+	formaction属性
+	其值指向一个脚本，这个脚本将会在提交完成后执行。
+	
+	formenctype属性
+	这个属性将提交服务器后，数据会被以什么形式加密，它会重写
+form的内容
+
+	formmethod属性
+	这个属性定义了一个将表单数据提交到行为URL的HTTP方法，重写了
+form
+
+	formtarget属性
+	这个属性指定了一个名字或者关键字，能在提交了表单后，表示在
+哪里反馈接受到的消息，重写了form
+
+	height和width
+	只对input="image"的类型起作用，用于确定图片的大小
+	
+	min和max属性
+	为特定input规定了最大值最小值
+	
+	multiple属性
+	这个属性的值为布尔值，其能决定能输入单个还是多个变量
+	
+	pattern属性
+	其值为正则表达式，传入其中的内容必须符合其定义的正则表达式
+	
+	placeholder属性
+	其定义了在未填入表格内容的时候，表格中的提示
+	
+	required属性
+	为一个布尔属性，当它在的时候，提交表单必须让它被确定填写。
+	
+	step属性
+	跳步，指定了输入数据的合法区间
+	
+	
+	
 			
 			
 
