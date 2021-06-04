@@ -1,0 +1,75 @@
+1.HTML5 Semantic Elements( HTML5 语义元素 )
+
+	什么是语义元素：
+	.语义是对于一个单词或者一段话的研究
+	.语义元素想浏览器和开发者描述他的意义作用
+	
+	HTML5的新语义元素
+	.<article>
+	.<aside>
+	.<details>
+	.<figcaption>
+	.<figure>
+	.<footer>
+	
+	HTML5 <section> 元素
+	.<section>元素定义一个文档的片段，是文本的语义主，通常有个heading
+	.web网站可以被分为introduction,content和contact information这几个
+	section	
+	
+	HTML5 <article>元素
+	.用于表现独立的文本
+	.他自己本身需要有用
+	
+	嵌套式语义元素
+	<section>定义了一个相关元素的区块，<article>定义了个完全的，包含自
+身相关内容的区块。
+
+	<header>元素
+	header元素为文档或者section定义一个header
+	他应该被用来介绍一个容器的内容
+	我们一个文档中可以有好几个<header>元素
+	
+	<footer>元素
+	.这个元素为一个文档或者section定义了注脚
+	.注脚应该包含与它相关内容的信息
+	.通常包括文档作者，版权信息，相关名词，联系方式等
+	.一个文本可以有好几个<footer>
+	
+	<nav>元素
+	.<nav>元素定义了一套导航链接
+	.注意，文档中不是超链接都在nav里面
+	
+	<aside>元素
+	这个元素定义了在文本周边的一些内容，他作为应该有文本
+	
+	<figure>
+	图片和标题可以一起放到这个里面，用<img>放图片,<figcaption>放标题
+	
+	<details>元素
+	这是一个下拉框，用于折叠用户可以看见的元素，可以设置open以在初始
+状态为展开状态。
+
+	<main>元素
+	用于标识文档的主要内容，每一个文档的main元素应该是独一无二的，
+文档中的main元素内容最多一个。
+
+	<time>元素
+	用于定义一个可读的时间或者日期
+	
+	<mark>元素
+	它，高光
+	
+2.HTML5 编码传统艺能
+	
+	元素名用小写
+	<p></p>这种配对最好弄好
+	属性名小写
+	
+	赋值最好用引号
+	
+	img要带上alt
+	
+	赋值的时候，等号前别带问号
+	<html> 和 <body>不能省略，而且html最好说明语言，但是head可以略
+	
