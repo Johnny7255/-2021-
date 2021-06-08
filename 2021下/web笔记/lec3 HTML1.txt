@@ -1,4 +1,4 @@
-1.  HTML ENTITY
+﻿1.  HTML ENTITY
 		
 		HTML中<>会被认为是标记的符号，这种字符不能被直接用键盘打出，
 	需要用字母ENITYT
